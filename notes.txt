@@ -97,3 +97,9 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
         
     6. By branch name (less common, can change)
         uses: actions/checkout@main
+
+
+## IMP NOTE
+    1. Any files that are created in VM during workflow execution will get deleted once the workflow run is complete.
+    They are not present in repo.
+    2. Also you can disable workflow with manually from gitHub -> action -> select workflow -> disable workflow from 3 dots menu
