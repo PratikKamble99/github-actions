@@ -1,0 +1,79 @@
+## GitHub Actions
+    GitHub Actions is GitHub’s built-in CI/CD + automation platform. You define workflows (YAML files) that run on events (push, PR, schedule, manual) and perform jobs (build, test, deploy).
+
+GitHub Handles Rest - 
+    1. Task in virtual machines
+    2. Caching dependencies
+    3. Providing reports on the outcomes
+
+GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
+
+## GitHub Actions used for
+   1. Building
+   2. Unit Testing
+   3. Linting
+   4. Dockerizing
+   5. Security Scanning
+   6. Deployment
+   7. Tests etc.
+
+
+## GitHub Actions Trigger Events
+    1. branch_protection_rule → Triggers when a branch protection rule is created, edited, or deleted.
+    2. check_run → Fires for check run status changes (created, completed, rerequested).
+    3. check_suite → Fires when check suites are requested or completed.
+    4. create → When a branch or tag is created.
+    5. delete → When a branch or tag is deleted.
+    6. deployment → When a deployment is created.
+    7. deployment_status → When a deployment status changes (e.g., success, failure).
+    8. discussion → Fires for GitHub Discussions events (created, edited, answered, etc.).
+    9. discussion_comment → When a comment is created, edited, or deleted on a discussion.
+    10. fork → When someone forks the repository.
+    11. gollum → When a wiki page is created or updated.
+    12. issue_comment → When a comment is created, edited, or deleted on an issue or pull request.
+    13. issues → When an issue is opened, edited, labeled, assigned, closed, etc.
+    14. label → When a label is created, edited, or deleted in the repo.
+    15. merge_group → For merge queue events.
+    16. milestone → When a milestone is created, closed, opened, or deleted.
+    17. page_build → When a GitHub Pages site is built or fails to build.
+    18. public → When a repository is made public.
+    19. pull_request → When a PR is opened, synchronized, reopened, labeled, closed, etc.
+    20. pull_request_review → When a review is submitted, edited, or dismissed on a PR.
+    21. pull_request_review_comment → When a review comment is created, edited, or deleted on a PR.
+    22. pull_request_target → Similar to pull_request, but runs in the context of the base repo (useful for forks, but with security caveats).
+    23. push → When commits are pushed to branches or tags.
+    24. registry_package → When a package is published or updated in GitHub Packages.
+    25. release → When a release is created, published, updated, or deleted.
+    26. repository_dispatch → Custom event you can trigger via API/webhook.
+    27. schedule → Runs on a cron schedule you define (e.g., nightly build).
+    28. status → When the status of a Git commit changes (e.g., CI passes/fails).
+    29. watch → When someone stars the repository.
+    30. workflow_call → When another workflow calls this workflow (reusable workflows).
+    31. workflow_dispatch → Manual trigger from GitHub UI or API (can take inputs).
+    32. workflow_run → When another workflow run completes (success/failure).
+
+## Workflow in GitHub Actions
+    A workflow is the automation recipe you define in your repository for GitHub Actions.
+    It tells GitHub when to run, what environment to use, and what steps to perform.
+
+    A workflow is made of:
+        Events → what triggers it (on:)
+        Jobs → groups of steps that run on runners.
+        Steps → individual actions or shell commands inside jobs.
+
+    Linux and windows runner hosted on Microsoft Azure platforms
+    MacOS runner hosted on Githubs own macOS cloud
+
+    ## Runners → virtual machines or containers where jobs run (hosted by GitHub or self-hosted).
+    Types of Runners
+    1. GitHub-Hosted Runners
+        - Managed by GitHub
+        - Automatically updated and maintained
+        - Available for Linux, Windows, and macOS. but cannot make system level changes
+        - Free tier available with usage limits based on account type (free, pro, team, enterprise)
+    2. Self-Hosted Runners
+        - Managed by you
+        - Can run on your own hardware or cloud instances
+        - More control over the environment and software installed
+        - Useful for specific requirements (e.g., special hardware, software licenses)
+        - Requires maintenance and updates by you

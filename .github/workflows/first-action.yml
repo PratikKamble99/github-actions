@@ -1,10 +1,11 @@
 name: first workflow # name of the workflow
-on: workflow_dispatch # when this workflow should run 
+# on: workflow_dispatch # when this workflow should run 
+on: push # when this workflow should run 
 jobs:
   fisrt-job: #name of job
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting # name of step
-        run: echo "Hello world!" # action to run 
+        run: echo "Hello world!" # cmd to run
       - name: Print goodbye
         run: echo "Done- bye"
