@@ -1,6 +1,6 @@
 name: first workflow # name of the workflow
-on: workflow_dispatch # when this workflow should run manually
-# on: push # when this workflow should run automatically
+# on: workflow_dispatch # when this workflow should run manually
+on: push # when this workflow should run automatically
 jobs:
   first-job: #name of job
     runs-on: ubuntu-latest
@@ -11,5 +11,8 @@ jobs:
         run: echo "Hello world!" # cmd to run
       - name: List files
         run: ls -la 
+
+      - name: Print notes data
+        run: cat notes.txt
       - name: Print goodbye
         run: echo "Done- bye"
