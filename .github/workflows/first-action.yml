@@ -1,8 +1,8 @@
 name: first workflow # name of the workflow
-# on: workflow_dispatch # when this workflow should run 
-on: push # when this workflow should run 
+on: workflow_dispatch # when this workflow should run manually
+# on: push # when this workflow should run automatically
 jobs:
-  fisrt-job: #name of job
+  first-job: #name of job
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting # name of step
