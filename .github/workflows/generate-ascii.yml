@@ -12,7 +12,7 @@ jobs:
             run: sudo apt install cowsay -y
 
           - name: Execute Cowsay CMD
-            run:     cowsay -f dragon "I love Linux!" >> dragon.txt
+            run: cowsay -f dragon "I love Linux!" >> dragon.txt
 
           - name: Test file exist
             run: grep -i "dragon" dragon.txt

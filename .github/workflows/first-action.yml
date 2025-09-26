@@ -1,6 +1,6 @@
 name: first workflow # name of the workflow
-# on: workflow_dispatch # when this workflow should run manually
-on: push # when this workflow should run automatically
+on: workflow_dispatch # when this workflow should run manually
+# on: push # when this workflow should run automatically
 jobs:
   first-job: #name of job
     runs-on: ubuntu-latest
