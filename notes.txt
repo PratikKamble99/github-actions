@@ -77,3 +77,23 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
         - More control over the environment and software installed
         - Useful for specific requirements (e.g., special hardware, software licenses)
         - Requires maintenance and updates by you
+
+
+## How to define action versions in workflows
+    1. By major version (common, stable)
+        uses: actions/checkout@v3
+        
+    2. By major and minor version (more specific)
+        uses: actions/checkout@v3.1
+
+    3. By full semantic version (most specific, exact)
+        uses: actions/checkout@v3.1.0
+
+    4. By git tag (specific to a tag)
+        uses: actions/checkout@v3.1.0-beta
+
+    5. By git SHA (exact commit, most precise)
+        uses: actions/checkout@d3d9446802a44259755d38
+        
+    6. By branch name (less common, can change)
+        uses: actions/checkout@main
