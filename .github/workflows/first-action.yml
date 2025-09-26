@@ -9,10 +9,16 @@ jobs:
         uses: actions/checkout@v3 # action to pull code in VM from repo
       - name: Print greeting # name of step
         run: echo "Hello world!" # cmd to run
-      - name: List files
-        run: ls -la 
+      # - name: List files
+      #   run: ls -la 
 
-      - name: Print notes data
-        run: cat notes.txt
-      - name: Print goodbye
-        run: echo "Done- bye"
+      # - name: Print notes data
+      #   run: cat notes.txt
+      
+      # - name: Print goodbye
+      #   run: echo "Done- bye"
+
+      - name: List and read files
+        run: |  # pipe used to run multiple commands in same step
+          ls
+          cat notes.txt
