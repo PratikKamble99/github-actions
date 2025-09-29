@@ -134,3 +134,18 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
 
     # Also you can store variables in repository level. Which can be used in any workflow in that repo.
     and accessed using ${{ vars.VAR_NAME }} syntax.
+
+## Concurrency in workflows
+    It allows you to run only a single job or workflow at a time for a given concurrency group.
+    If a new job or workflow is triggered while another one is still running in the same concurrency group, 
+    the new one will be queued or canceled based on the concurrency settings.
+    
+    We can use it on workflow
+
+    use case -
+        Preventing duplicate deployments: If multiple commits are pushed to a branch in quick succession, 
+        you might want to ensure that only the latest commit is deployed, canceling any previous deployment jobs that are still running.
+    
+    1. concurrency: 
+        group: ${{ github.ref }}  # Unique group name (e.g., branch name)
+        cancel-in-progress: true   # Cancel any in-progress runs in the same group

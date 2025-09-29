@@ -1,0 +1,22 @@
+name: Docker
+on: workflow_dispatch
+
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Docker build
+              run: echo "docker --build docker.io/${{vars.DOCKER_USERNAME}}/sas"
+
+            - name: Docket Login
+              run: echo "docker --login --username=${{vars.DOCKER_USERNAME}} --password=${{secrets.DOCKER_PASSWORD}}"
+
+            - name: Docker publish
+              run: echo "docker publish --image"
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Docker run 
+            run: echo "docker run 8080:8080 docker.io/contain_id/image_name:latest"
