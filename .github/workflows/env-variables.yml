@@ -9,6 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         env: # Job level environment variables
             JOB_VAR: "This is job level"
+            
         steps:
             - name: Print global env
               env: # Step level environment variables
@@ -25,3 +26,12 @@ jobs:
                 STEP_VAR: "This is step level"
                 STEP_VAR_2: "This is step level var 2"
               run: echo "STEP_LEVEL = $STEP_VAR, ${{env.STEP_VAR_2}}"
+
+    Environment_secrets_and_vars_repo_level:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Print repo level variables
+            run: echo "Variables = ${{vars.DOCKER_USERNAME}}"
+
+          - name: Print repo level secrets
+            run: echo "Secrets = ${{secrets.DOCKER_PASSWORD}}"

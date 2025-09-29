@@ -127,3 +127,10 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     1. using $VAR_NAME
     2. using ${{ env.VAR_NAME }}
     
+## Repository Secrets
+    1. Go to repository -> Settings -> Secrets and variables -> Actions -> New repository secret -> Add secret name and value -> Add secret
+    2. To use secret in workflow use ${{ secrets.SECRET_NAME }}
+    3. Secrets are encrypted emvironmnt variables. They are not visible in workflow logs.
+
+    # Also you can store variables in repository level. Which can be used in any workflow in that repo.
+    and accessed using ${{ vars.VAR_NAME }} syntax.
