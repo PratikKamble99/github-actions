@@ -29,7 +29,7 @@ jobs:
                 # Name of the artifact to download.
                 # If unspecified, all artifacts for the run are downloaded.
                 name: dragon-txt-file
-                path: dragon.txt # Destination path ( Optional : Default is $GITHUB_WORKSPACE ). Supports basic tilde expansion.
+                # path: dragon.txt # Destination path ( Optional : Default is $GITHUB_WORKSPACE ). Supports basic tilde expansion.
 
           - name: list files
             run: ls
