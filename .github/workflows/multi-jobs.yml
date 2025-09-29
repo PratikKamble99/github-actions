@@ -31,6 +31,8 @@ jobs:
                 name: dragon-txt-file
                 path: dragon.txt # Destination path ( Optional : Default is $GITHUB_WORKSPACE ). Supports basic tilde expansion.
 
+          - name: list files
+            run: ls
           - name: Test file exists
             run: grep -i "dragon" dragon.txt
 
