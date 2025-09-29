@@ -16,6 +16,7 @@ jobs:
             run: sleep 30
 
     test_job_1:
+        needs: build_job_1 # needs takes other job name value 
         runs-on: ubuntu-latest
         steps:
           - name: Test file exists
@@ -25,6 +26,7 @@ jobs:
             run: sleep 20
 
     deploy_job_1:
+        needs: [test_job_1] # this job depends on more than 1 jobs 
         runs-on: ubuntu-latest
         steps:
           - name: Display data

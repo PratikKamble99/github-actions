@@ -106,3 +106,5 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
 
 ## Multiple jobs
     1. Each Job need to run in its own Virtual machines. They Does not run on same VM.
+    2. Bydefault jobs run in parallel and they do not waits for each other. So may be your deployment job run before build job is completed.
+    3. To run jobs sequentially use "needs" keyword.
