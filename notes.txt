@@ -147,5 +147,13 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
         you might want to ensure that only the latest commit is deployed, canceling any previous deployment jobs that are still running.
     
     1. concurrency: 
-        group: ${{ github.ref }}  # Unique group name (e.g., branch name)
+        group:  # Unique group name (e.g., branch name)
         cancel-in-progress: true   # Cancel any in-progress runs in the same group
+        cancel-in-progress: false   # Queue new runs until the current one finishes
+
+
+## GitHub kills workflow if it runs for more than 6 hours ( 3600 minutes ).
+
+Solution - 
+    you can use timeOut in 1.workflow level 2.job level 3.step level
+    

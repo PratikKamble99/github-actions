@@ -25,6 +25,7 @@ jobs:
 
         steps:
           - name: Docker run 
+            timeout-minutes: 1 # workflow stops if it takes more time than defined timeout-minuts
             run: |
                 echo "docker run 8080:8080 docker.io/contain_id/image_name:latest"
-                sleep 600s
+                sleep 6000s
