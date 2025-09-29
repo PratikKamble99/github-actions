@@ -98,6 +98,8 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     6. By branch name (less common, can change)
         uses: actions/checkout@main
 
+    ## uses keyword is used to specify an action to run as part of steps. and it can reference actions from GitHub Marketplace, public repositories, or local actions in your repo.
+
 
 ## IMP NOTE
     1. Any files that are created in VM during workflow execution will get deleted once the workflow run is complete.
@@ -108,3 +110,9 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     1. Each Job need to run in its own Virtual machines. They Does not run on same VM.
     2. Bydefault jobs run in parallel and they do not waits for each other. So may be your deployment job run before build job is completed.
     3. To run jobs sequentially use "needs" keyword.
+    4. If one job fails then bydefault other jobs will not run.
+
+## Storing orkflow data as Artifacts
+    1. Artifacts are used to store data generated during a workflow run, such as build outputs, test results, or logs.
+    2. Artifacts can be uploaded and downloaded using the actions/upload-artifact and actions/download-artifact actions.
+    3. Artifacts are stored for a limited time (default is 90 days) and can be accessed from the workflow run page in GitHub.
