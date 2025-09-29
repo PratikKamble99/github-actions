@@ -17,10 +17,12 @@ jobs:
 
     deploy:
         runs-on: ubuntu-latest
-        concurrency: 
-            group: production-build # unique group name of job
-            cancel-in-progress: true # cancel other inprogress workflows and start new one in trigger again
+        # concurrency: 
+        #     group: production-build # unique group name of job
+        #     cancel-in-progress: true # cancel other inprogress workflows and start new one in trigger again
 
         steps:
           - name: Docker run 
-            run: echo "docker run 8080:8080 docker.io/contain_id/image_name:latest"
+            run: |
+                echo "docker run 8080:8080 docker.io/contain_id/image_name:latest"
+                sleep 600s
