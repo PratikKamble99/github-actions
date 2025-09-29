@@ -16,10 +16,12 @@ jobs:
               run: echo "docker publish --image"
 
     deploy:
+        needs: docker
         runs-on: ubuntu-latest
         concurrency: 
             group: production-build # unique group name of job
-            cancel-in-progress: true # cancel other inprogress workflows and start new one in trigger again
+            # cancel-in-progress: true # cancel other inprogress workflows and start new one in trigger again
+            cancel-in-progress: false # it waits will thet previous workflow done its execution
 
         steps:
           - name: Docker run 
