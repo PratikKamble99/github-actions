@@ -2,28 +2,30 @@ name: Generate ASCII Art
 on: push
 
 jobs:
-    generate-askii:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout Repo
-            uses: actions/checkout@v3
+  generate-askii:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v3
 
-          # - name: Install cowsay # Executing third party actions
-          #   run: sudo apt install cowsay -y
+        # - name: Install cowsay # Executing third party actions
+        #   run: sudo apt install cowsay -y
 
-          # - name: Execute Cowsay CMD
-          #   run: cowsay -f dragon "I love Linux!" >> dragon.txt
+        # - name: Execute Cowsay CMD
+        #   run: cowsay -f dragon "I love Linux!" >> dragon.txt
 
-          # - name: Test file exist
-          #   run: grep -i "dragon" dragon.txt
+        # - name: Test file exist
+        #   run: grep -i "dragon" dragon.txt
 
-          # - name: Read file
-          #   run: cat dragon.txt
+        # - name: Read file
+        #   run: cat dragon.txt
 
-          - name: List Repo files
-            run: ls -ltra
+        - name: List Repo files
+          run: ls -ltra
 
-          - name: Executing shell script
-            run: |
-              chmod +x ascii-script.sh
-              ./ascii-script.sh
+        - name: Executing shell script
+          run: |
+            chmod +x ascii-script.sh
+            ./ascii-script.sh
+
+            

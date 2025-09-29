@@ -103,3 +103,6 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     1. Any files that are created in VM during workflow execution will get deleted once the workflow run is complete.
     They are not present in repo.
     2. Also you can disable workflow with manually from gitHub -> action -> select workflow -> disable workflow from 3 dots menu
+
+## Multiple jobs
+    1. Each Job need to run in its own Virtual machines. They Does not run on same VM.

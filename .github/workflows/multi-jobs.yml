@@ -1,0 +1,34 @@
+name: Generate ASCII ART
+
+on: push
+
+jobs:
+    build_job_1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Install Cowsay
+            run: sudo apt install cowsay -y
+        
+          - name: Execute Cowsay CMD 
+            run: cowsay -f dragon "I love Linux!" >> dragon.txt
+
+          - name: Sleep for 30 secs
+            run: sleep 30
+
+    test_job_1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Test file exists
+            run: grep -i "dragon" dragon.txt
+
+          - name: Sleep for 20 secs
+            run: sleep 20
+
+    deploy_job_1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Display data
+            run: cat dragon.txt
+
+          - name: Deploy 
+            run: echo 'Deploying....'
