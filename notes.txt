@@ -112,7 +112,18 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     3. To run jobs sequentially use "needs" keyword.
     4. If one job fails then bydefault other jobs will not run.
 
-## Storing orkflow data as Artifacts
+## Storing workflow data as Artifacts
     1. Artifacts are used to store data generated during a workflow run, such as build outputs, test results, or logs.
     2. Artifacts can be uploaded and downloaded using the actions/upload-artifact and actions/download-artifact actions.
     3. Artifacts are stored for a limited time (default is 90 days) and can be accessed from the workflow run page in GitHub.
+
+
+## Types of environment variables Types
+    1. Step level: Available only within the specific step where they are defined.
+    2. Job level: Available to all steps within a specific job.
+    3. Workflow level: Available to all jobs and steps within the entire workflow.
+
+    ways to use environment variables
+    1. using $VAR_NAME
+    2. using ${{ env.VAR_NAME }}
+    

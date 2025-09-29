@@ -1,0 +1,27 @@
+name: Environment Variables
+on: push
+
+env: # Workflow level environment variables
+  GLOBAL_VAR: "This is workflow level"
+
+jobs:
+    Environment_var:
+        runs-on: ubuntu-latest
+        env: # Job level environment variables
+            JOB_VAR: "This is job level"
+        steps:
+            - name: Print global env
+              env: # Step level environment variables
+                STEP_VAR: "This is step level"
+              run: echo "Global = $GLOBAL_VAR"
+
+            - name: Print Job level env
+              env: # Step level environment variables
+                STEP_VAR: "This is step level"
+              run: echo "JOB_LEVEL = $JOB_VAR"
+
+            - name: Print Step Level env
+              env: # Step level environment variables
+                STEP_VAR: "This is step level"
+                STEP_VAR_2: "This is step level var 2"
+              run: echo "STEP_LEVEL = $STEP_VAR, ${{env.STEP_VAR_2}}"
