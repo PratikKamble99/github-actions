@@ -153,7 +153,29 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
 
 
 ## GitHub kills workflow if it runs for more than 6 hours ( 3600 minutes ).
+    Solution - you can use timeOut in 1.workflow level 2.job level 3.step level
 
-Solution - 
-    you can use timeOut in 1.workflow level 2.job level 3.step level
+## Strategy Matrix Configuration
+    It allows you to run a job multiple times with different configurations (e.g., different OS, language versions, etc.) in parallel.
+    This is useful for testing your code across multiple environments.
+
+    Example - testing on multiple versions of Node.js and operating systems
+
+    jobs:
+      build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os: [ubuntu-latest, windows-latest, macos-latest]
+            node: [12, 14, 16]
+          fail-fast: false  # Continue running all jobs even if one fails
+        steps:
+          - uses: actions/checkout@v2
+          - name: Set up Node.js ${{ matrix.node }}
+            uses: actions/setup-node@v2
+            with:
+              node-version: ${{ matrix.node }}
+          - run: npm install
+          - run: npm test
+
     
