@@ -13,7 +13,7 @@ on:
            - closed
 
         paths-ignore: # workflow will only run if changes in other than readme.md file
-        - readme.md 
+        - README.MD 
 
         branches:
             - main
