@@ -180,4 +180,16 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
           - run: npm install
           - run: npm test
 
-    
+## Context
+        A context is a way to access information in your workflow.
+    Think of it like a data object that holds variables about the workflow run, job, steps, GitHub environment, secrets, etc.
+
+    You use contexts with the ${{ }} expression syntax.
+    1. github context
+    2. env context
+    3. job context
+    4. secrets context
+    5. steps context
+    6. strategy context
+    7. secret context
+    8. vars context

@@ -1,6 +1,6 @@
 name: Strategy Matrix Configuration
 
-on: push
+on: workflow_dispatch
 
 jobs:
     ################# In Below code we have to write repeated code for same job with different configuration. But Strategy matrix allows you to do this in same job.  ####################
