@@ -159,6 +159,8 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     It allows you to run a job multiple times with different configurations (e.g., different OS, language versions, etc.) in parallel.
     This is useful for testing your code across multiple environments.
 
+    # While parallel execution if one job fails then bydefault other jobs will not run.
+
     Example - testing on multiple versions of Node.js and operating systems
 
     jobs:
