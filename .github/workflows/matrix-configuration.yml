@@ -3,20 +3,33 @@ name: Strategy Matrix Configuration
 on: push
 
 jobs:
-    deploy_on_ubuntu:
-        runs-on: ubuntu-latest
+    ################# In Below code we have to write repeated code for same job with different configuration. But Strategy matrix allows you to do this in same job.  ####################
+    # deploy_on_ubuntu:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: Echo docker details
+    #           run: docker info
+
+    #         - name: Run Image
+    #           run: docker run hello-world
+
+    # deploy_on_windows:
+    #     runs-on: windows-latest
+    #     steps:
+    #         - name: Echo docker details
+    #           run: docker info
+
+    #         - name: Run Image
+    #           run: docker run hello-world
+    deploy:
+        strategy:
+            matrix:
+              os: [ubuntu-latest, windows-latest, ubuntu-20.04]
+              image: [hello-world, alpine]
+        runs-on: ${{ matrix.os }}
         steps:
             - name: Echo docker details
               run: docker info
 
-            - name: Run Image
-              run: docker run hello-world
-
-    deploy_on_windows:
-        runs-on: windows-latest
-        steps:
-            - name: Echo docker details
-              run: docker info
-
-            - name: Run Image
-              run: docker run hello-world
+            - name: Run Image ${{ matrix.image }}
+              run: docker run ${{ matrix.image }}
