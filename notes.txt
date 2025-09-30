@@ -193,3 +193,21 @@ GitHub Actions can operate on different OS such as Windows, Linux, and macOS.
     6. strategy context
     7. secret context
     8. vars context
+
+## Expression
+    Expressions are used to evaluate values in workflows.
+    They are enclosed in ${{ }} and can include functions, operators, and context references.
+
+    Example - using an expression to check if a branch is main
+    if: ${{ github.ref == 'refs/heads/main' }}
+
+    types of expressions
+    1. Logical expressions: and, or, not
+    2. Comparison expressions: ==, !=, <, >, <=, >=
+    3. Mathematical expressions: +, -, *, /, %
+    4. String expressions: contains(), startsWith(), endsWith()
+    5. Date expressions: format(), fromJson(), toJson()
+    6. Array expressions: join(), contains(), length()
+    7. Hash expressions: hashFiles()
+    8. Conversion expressions: toJson(), fromJson(), toYaml(), fromYaml()
+    
